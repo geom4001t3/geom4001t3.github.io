@@ -124,8 +124,8 @@ var config = {
             description: 'As the name goes, Champagne lookout offers the best-known and most popular view in Gatineau Park. The trail offers a number of activity options and is best used from April until October. Although the wall has collapsed, the NCC hopes to complete it by spring 2021.',
             location: {
                 center: [-75.91259, 45.50850],
-                zoom: 8.5,
-                pitch: 60,
+                zoom: 13,
+                pitch: 45,
                 bearing: 0
             },
             mapAnimation: 'flyTo',
