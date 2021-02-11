@@ -103,7 +103,7 @@
         }
 
         /* Fix issue on mobile browser where scroll breaks  */
-        .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan, 
+        .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan,
         .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan .mapboxgl-canvas {
             touch-action: unset;
         }
@@ -111,7 +111,19 @@
         </style>
 </head>
 <body>
-
+  <table style="position: fixed; bottom: 75px; right: 75px; z-index:1;">
+        <tr>
+          <th>Legend</th>
+        </tr>
+        <tr>
+          <th> <div style="width: 25px; height: 25px; background-color: Blue; border-radius: 12.5px:"> </th>
+          <th> Picnic Areas </th>
+        </tr>
+        <tr>
+          <th> <div style="width: 25px; height: 25px; background-color: Red; border-radius: 12.5px:"> </th>
+          <th> Lookouts </th>
+        </tr>
+  </table>
 <div id="map"></div>
 <div id="story"></div>
 <script src="./config.js"></script>
