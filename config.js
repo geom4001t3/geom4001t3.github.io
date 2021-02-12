@@ -315,7 +315,7 @@ var config = {
             id: 'credits-id',
             alignment: 'right',
             hidden: false,
-            title: 'Thank You from Team 4!',
+            title: 'Thank You from Team 3!',
             image: './images/Gatineaupark.jpg',
             description: '-Gillian, Yussuf, Didier, Edward and Alexandra. <br> <a href="https://ncc-ccn.gc.ca/places/conservation-at-gatineau-park"target="_blank">Image Source (NCC)</a>',
             location: {
