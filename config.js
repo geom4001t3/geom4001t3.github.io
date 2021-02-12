@@ -5,15 +5,40 @@ var config = {
     markerColor: '#3FB1CE',
     theme: 'dark',
     use3dTerrain: false,
-    title: 'What to do in Gatineau Park?',
-    subtitle: 'Gatineau Park is the National Capital Region’s conservation park. The largest green space in the region, the Park occupies an area of more than 361 square kilometres, and is a place of rich and unique biodiversity. It is the second-most visited park in Canada, and a destination for outdoor enthusiasts to engage in recreational activities that respect the environment. (NCC, 2020)',
+    title: 'Welcome to Gatineau Park',
+    subtitle: "The National Capital Region's Conservation Park",
     byline: 'By Alexandra, Didier, Edward, Gillian, Yussuf',
     footer: 'Source: source citations, etc.',
     chapters: [
         {
             id: 'overview-id',
             alignment: 'left',
-            description: '<h2>Gatineau park isn’t your everyday park. There are many activities to do and they slightly differ by season.</h2><br><h3>Summer Activities:</h3><ul><li> Hiking and walking </li><li> Dog walking </li><li> Cycling </li><li> In-line skating </li><li> Picnicking </li><li> Swimming </li><li> Boating Fishing </li><li> Horseback Riding</li><li> Rock climbing </li><li> Camping </li></ul><br><h3>Winter Activities:</h3><ul><li> Cross country skiing </li><li> Snowshoeing </li><li> Snow biking </li><li> In-line skating </li><li> Winter hiking and walking </li><li> Camping </li></ul><video width="500" height="300" controls><source src="./images/Gatineau_video.mp4" type="video/mp4">Your browser does not support the video tag.</video>Video taken on NCC`s Youtube page: <a href="https://www.youtube.com/watch?v=KZMiPpAMlKI&t=1s" target="_blank">Welcome to Gatineau Park</a>',
+            description: '<h2> About Gaitneau Park </h2> Gatineau Park is the National Capital Region’s conservation park. The largest green space in the region, the Park occupies an area of more than 361 square kilometres, and is a place of rich and unique biodiversity. It is the second-most visited park in Canada, and a destination for outdoor enthusiasts to engage in recreational activities that respect the environment. (NCC, 2020) <video width="500" height="300" controls><source src="./images/Gatineau_video.mp4" type="video/mp4">Your browser does not support the video tag.</video>Video taken on NCC`s Youtube page: <a href="https://www.youtube.com/watch?v=KZMiPpAMlKI&t=1s" target="_blank">Welcome to Gatineau Park</a>',
+            hidden: false,
+            location: {
+                center: [-75.95286, 45.55058],
+                zoom: 9.74,
+                pitch: 33.00,
+                bearing: 16.00
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+               {
+
+               }
+            ],
+            onChapterExit: [
+               {
+
+               }
+            ]
+        },
+        {
+            id: 'overview-id',
+            alignment: 'right',
+            description: '<h2> There are many activities at Gatineau Park that differ by season </h2><br><h3>Summer Activities:</h3><ul><li> Hiking and walking </li><li> Dog walking </li><li> Cycling </li><li> In-line skating </li><li> Picnicking </li><li> Swimming </li><li> Boating Fishing </li><li> Horseback Riding</li><li> Rock climbing </li><li> Camping </li></ul><br><h3>Winter Activities:</h3><ul><li> Cross country skiing </li><li> Snowshoeing </li><li> Snow biking </li><li> In-line skating </li><li> Winter hiking and walking </li><li> Camping </li></ul>',
             hidden: false,
             location: {
                 center: [-75.95286, 45.55058],
@@ -37,7 +62,7 @@ var config = {
         },
         {
             id: 'chart-id',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             title: 'Busiest days per Season',
             image: '',
@@ -65,7 +90,7 @@ var config = {
 
         {
             id: 'mackenzie-king-id',
-            alignment: 'left',
+            alignment: 'right',
             hidden: false,
             title: 'Mackenzie King Estate',
             image: './images/Mack.png',
@@ -96,7 +121,7 @@ var config = {
 
         {
             id: 'CampF-id',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             title: 'Camp Fortune',
             image: './images/Campfortune.jpg',
@@ -127,7 +152,7 @@ var config = {
 
         {
             id: 'sugarbush-id',
-            alignment: 'left',
+            alignment: 'right',
             hidden: false,
             title: 'Sugarbush Trail',
             image: './images/sugarbush.jpg',
@@ -147,7 +172,7 @@ var config = {
 
         {
             id: 'champlain-id',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             title: 'Champlain Lookout',
             image: './images/champlain.jpg',
@@ -178,7 +203,7 @@ var config = {
 
         {
             id: 'Luskville-id',
-            alignment: 'left',
+            alignment: 'right',
             hidden: false,
             title: 'Luskville Waterfalls',
             image: './images/waterfall.jpg',
@@ -198,7 +223,7 @@ var config = {
 
         {
             id: 'pinklake-id',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             title: 'Pink Lake',
             image: './images/pinklake.jpg',
@@ -229,7 +254,7 @@ var config = {
 
         {
             id: 'wakefield-id',
-            alignment: 'left',
+            alignment: 'right',
             hidden: false,
             title: 'Village of Wakefield',
             image: './images/wakefield.png',
@@ -257,16 +282,16 @@ var config = {
 
         {
             id: 'peche-lake-id',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             title: 'La Pêche Lake',
             image: './images/lacpeche.jpg',
             description: 'La Peche lake is the largest lake in all of Gatineau Park. Located on the western portion, this lake is the farthest from the Ottawa/Gatineau downtown core. This location is popular for canoe-camping and fishing. <br>For more information about La Pêche Lake visit: <a href="https://ncc-ccn.gc.ca/places/la-peche-lake" target="_blank">La Pêche Lake (NCC)</a>',
             location: {
                 center: [-76.17878, 45.62195],
-                zoom: 15.5,
-                pitch: 60,
-                bearing: -43.2
+                zoom: 14,
+                pitch: 33,
+                bearing: 16.2
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
@@ -285,7 +310,7 @@ var config = {
 
         {
             id: 'terrain-id',
-            alignment: 'left',
+            alignment: 'right',
             hidden: false,
             title: 'Terrain',
             image: './images/terrain.jpg',
@@ -313,7 +338,7 @@ var config = {
 
         {
             id: 'credits-id',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             title: 'Thank You from Team 3!',
             image: './images/Gatineaupark.jpg',
