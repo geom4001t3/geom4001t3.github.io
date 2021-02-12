@@ -38,7 +38,7 @@ var config = {
 
         {
             id: 'mackenzie-king-id',
-            alignment: 'left',
+            alignment: 'right',
             hidden: false,
             title: 'Mackenzie King Estate',
             image: './images/Mack.png',
@@ -100,7 +100,7 @@ var config = {
 
         {
             id: 'sugarbush-id',
-            alignment: 'left',
+            alignment: 'right',
             hidden: false,
             title: 'Sugarbush Trail',
             image: './images/sugarbush.jpg',
@@ -151,7 +151,7 @@ var config = {
 
         {
             id: 'Luskville-id',
-            alignment: 'left',
+            alignment: 'right',
             hidden: false,
             title: 'Luskville Waterfalls',
             image: './images/waterfall.jpg',
@@ -202,7 +202,7 @@ var config = {
 
         {
             id: 'wakefield-id',
-            alignment: 'left',
+            alignment: 'right',
             hidden: false,
             title: 'Village of Wakefield',
             image: './images/wakefield.png',
