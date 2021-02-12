@@ -35,6 +35,33 @@ var config = {
                }
             ]
         },
+        {
+            id: 'chart-id',
+            alignment: 'right',
+            hidden: false,
+            title: 'Busiest days per Season',
+            image: '',
+            description: ' Fall time Busiest days in % <canvas id="myChart" width="100" height="25"></canvas> Winter time Busiest days in %<canvas id="myChart2" width="100" height="25"> </canvas> Spring/Summer time Busiest days in % <canvas id="myChart3" width="100" height="25"></canvas>',
+            location: {
+                center: [-75.95286, 45.55058],
+                zoom: 10.74,
+                pitch: 60,
+                bearing: -43.2
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+
+                } 
+            ],
+            onChapterExit: [
+                {
+
+                }
+            ]
+        },
 
         {
             id: 'mackenzie-king-id',
