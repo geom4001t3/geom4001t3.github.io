@@ -13,7 +13,7 @@ var config = {
         {
             id: 'overview-id',
             alignment: 'left',
-            description: '<h2> About Gaitneau Park </h2> Gatineau Park is the National Capital Region’s conservation park. The largest green space in the region, the Park occupies an area of more than 361 square kilometres, and is a place of rich and unique biodiversity. It is the second-most visited park in Canada, and a destination for outdoor enthusiasts to engage in recreational activities that respect the environment. (NCC, 2020) <video width="500" height="300" controls><source src="./images/Gatineau_video.mp4" type="video/mp4">Your browser does not support the video tag.</video>Video taken on NCC`s Youtube page: <a href="https://www.youtube.com/watch?v=KZMiPpAMlKI&t=1s" target="_blank">Welcome to Gatineau Park</a>',
+            description: '<h2> About Gatineau Park </h2> Gatineau Park is the National Capital Region’s conservation park. The largest green space in the region, the Park occupies an area of more than 361 square kilometres, and is a place of rich and unique biodiversity. It is the second-most visited park in Canada, and a destination for outdoor enthusiasts to engage in recreational activities that respect the environment. (NCC, 2020) <video width="500" height="300" controls><source src="./images/Gatineau_video.mp4" type="video/mp4">Your browser does not support the video tag.</video>Video taken on NCC`s Youtube page: <a href="https://www.youtube.com/watch?v=KZMiPpAMlKI&t=1s" target="_blank">Welcome to Gatineau Park</a>',
             hidden: false,
             location: {
                 center: [-75.95286, 45.55058],
@@ -362,7 +362,7 @@ var config = {
             hidden: false,
             title: 'Thank You from Team 3!',
             image: './images/Gatineaupark.jpg',
-            description: '-Gillian, Yussuf, Didier, Edward and Alexandra. <br> <a href="https://ncc-ccn.gc.ca/places/conservation-at-gatineau-park"target="_blank">Image Source (NCC)</a>',
+            description: '-Alexandra, Didier, Edward, Gillian, Yussuf. <br> <a href="https://ncc-ccn.gc.ca/places/conservation-at-gatineau-park"target="_blank">Image Source (NCC)</a>',
             location: {
                 center: [-75.94234, 45.54483],
                 zoom: 11.09,
