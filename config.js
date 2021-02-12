@@ -8,7 +8,7 @@ var config = {
     title: 'Welcome to Gatineau Park',
     subtitle: "The National Capital Region's Conservation Park",
     byline: 'By Alexandra, Didier, Edward, Gillian, Yussuf',
-    footer: 'Source: source citations, etc.',
+    footer: '',
     chapters: [
         {
             id: 'overview-id',
