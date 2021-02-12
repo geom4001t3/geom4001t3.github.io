@@ -5,6 +5,7 @@
     <title>Mapbox Storytelling</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <head><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script></head>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
     <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
     <script src="https://unpkg.com/scrollama"></script>
@@ -356,6 +357,95 @@ map.on("load", function() {
 window.addEventListener('resize', scroller.resize);
 
 </script>
+<script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+      labels: ['Sunday', 'Saturday', 'Monday - Thursday', 'Friday'],
+      datasets: [{
+          label: '%',
+          data: [53, 56, 38, 10],
+          backgroundColor: 
+              'Orange',
+          
+          borderWidth: 1
+      }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                   beginAtZero: true
+                }
+           }]
+        }
+    }
+  });
+
+
+
+    </script>
+    <script>
+        var ctx = document.getElementById('myChart2').getContext('2d');
+        Chart.defaults.global.defaultFontColor = 'rgb(255, 255, 212)';
+        var myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+      labels: ['Sunday', 'Saturday', 'Monday - Thursday', 'Friday'],
+      datasets: [{
+          label: '%',
+          fontColor: "black",
+          data: [59, 64, 34, 26],
+          backgroundColor: 
+              'rgb(8, 123, 159)',
+          
+          borderWidth: 1
+      }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                   beginAtZero: true
+                }
+           }]
+        }
+    }
+  });
+
+
+
+    </script>
+    <script>
+        var ctx = document.getElementById('myChart3').getContext('2d');
+        var myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+      labels: ['Sunday', 'Saturday', 'Monday - Thursday', 'Friday'],
+      datasets: [{
+          label: '%',
+          data: [56, 56, 22, 18],
+          backgroundColor: 
+              'Green',
+          
+          borderWidth: 1
+      }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                   beginAtZero: true
+                }
+           }]
+        }
+    }
+  });
+
+
+
+    </script>
 
 </body>
 </html>
