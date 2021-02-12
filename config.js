@@ -322,16 +322,18 @@ var config = {
                 bearing: 0.02
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: false,
+            rotateAnimation: true,
             callback: '',
             onChapterEnter: [
                 {
-
+                    layer: 'Contour',
+                    opacity: 1,
                 }
             ],
             onChapterExit: [
                 {
-
+                    layer: 'Contour',
+                    opacity: 0,
                 }
             ]
         },
