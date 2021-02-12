@@ -4,7 +4,7 @@ var config = {
     showMarkers: true,
     markerColor: '#3FB1CE',
     theme: 'dark',
-    use3dTerrain: true,
+    use3dTerrain: false,
     title: 'What to do in Gatineau Park?',
     subtitle: 'Gatineau Park is the National Capital Region’s conservation park. The largest green space in the region, the Park occupies an area of more than 361 square kilometres, and is a place of rich and unique biodiversity. It is the second-most visited park in Canada, and a destination for outdoor enthusiasts to engage in recreational activities that respect the environment. (NCC, 2020)',
     byline: 'By Alexandra, Didier, Edward, Gillian, Yussuf',
@@ -33,6 +33,33 @@ var config = {
                {
 
                }
+            ]
+        },
+        {
+            id: 'chart-id',
+            alignment: 'right',
+            hidden: false,
+            title: 'Busiest days per Season',
+            image: '',
+            description: ' Fall time Busiest days in % <canvas id="myChart" width="100" height="25"></canvas> Winter time Busiest days in %<canvas id="myChart2" width="100" height="25"> </canvas> Spring/Summer time Busiest days in % <canvas id="myChart3" width="100" height="25"></canvas>',
+            location: {
+                center: [-75.95286, 45.55058],
+                zoom: 10.74,
+                pitch: 60,
+                bearing: -43.2
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+
+                } 
+            ],
+            onChapterExit: [
+                {
+
+                }
             ]
         },
 
@@ -73,7 +100,7 @@ var config = {
             hidden: false,
             title: 'Camp Fortune',
             image: './images/Campfortune.jpg',
-            description: 'Located in Gatineau hills approximately 15 minutes from downtown Ottawa, Camp Fortune has many activities to enjoy with family and friends. Whether it’s skiing or snowboarding you can enjoy one of the 20 runs before stopping at the lodge and enjoying a famous Quebec poutine. Stop by in the summer to enjoy Camp Fortunes tree top adventure that ends with a  which is a 3 hour adventure in the trees. <br>For more information about Camp Fortune visit: <a href="https://campfortune.com/en/" target="_blank">Camp Fortune</a>', 
+            description: 'Located in Gatineau hills approximately 15 minutes from downtown Ottawa, Camp Fortune has many activities to enjoy with family and friends. Whether it’s skiing or snowboarding you can enjoy one of the 20 runs before stopping at the lodge and enjoying a famous Quebec poutine. Stop by in the summer to enjoy Camp Fortunes tree top adventure that ends with a  which is a 3 hour adventure in the trees. <br>For more information about Camp Fortune visit: <a href="https://campfortune.com/en/" target="_blank">Camp Fortune</a>',
             location: {
                 center: [-75.86040, 45.50649],
                 zoom: 15,
@@ -124,7 +151,7 @@ var config = {
             hidden: false,
             title: 'Champlain Lookout',
             image: './images/champlain.jpg',
-            description: 'As the name goes, Champlain lookout offers the best-known and most popular view in Gatineau Park. The trail offers a number of activity options and is best used from April until October. Although the wall has collapsed, the NCC hopes to complete it by spring 2021. <br>For more information about Champlain Lookout visit: <a href="https://www.alltrails.com/trail/canada/quebec/sentier-d-observation-de-champlain" target="_blank">Champlain Lookout (AllTrails)</a>', 
+            description: 'As the name goes, Champlain lookout offers the best-known and most popular view in Gatineau Park. The trail offers a number of activity options and is best used from April until October. Although the wall has collapsed, the NCC hopes to complete it by spring 2021. <br>For more information about Champlain Lookout visit: <a href="https://www.alltrails.com/trail/canada/quebec/sentier-d-observation-de-champlain" target="_blank">Champlain Lookout (AllTrails)</a>',
             location: {
                 center: [-75.91259, 45.50850],
                 zoom: 13,
@@ -155,7 +182,7 @@ var config = {
             hidden: false,
             title: 'Luskville Waterfalls',
             image: './images/waterfall.jpg',
-            description: ' After a challenging hike through the beautiful park with 300 m of elevation you can enjoy a beautiful view of the Luskville waterfall. Flowing through the Eardley Escarpment this trail also leads to multiple lookouts and the fire tower. <br>For more information about Luskville Falls visit: <a href="https://ncc-ccn.gc.ca/places/luskville-falls" target="_blank">Luskville Falls (NCC)</a>', 
+            description: ' After a challenging hike through the beautiful park with 300 m of elevation you can enjoy a beautiful view of the Luskville waterfall. Flowing through the Eardley Escarpment this trail also leads to multiple lookouts and the fire tower. <br>For more information about Luskville Falls visit: <a href="https://ncc-ccn.gc.ca/places/luskville-falls" target="_blank">Luskville Falls (NCC)</a>',
             location: {
                 center: [-75.99255, 45.53658],
                 zoom: 15,
@@ -168,7 +195,7 @@ var config = {
             onChapterEnter: [],
             onChapterExit: []
         },
-        
+
         {
             id: 'pinklake-id',
             alignment: 'left',
@@ -218,12 +245,12 @@ var config = {
             callback: '',
             onChapterEnter: [
                {
-              
+
                }
             ],
             onChapterExit: [
                {
-              
+
                }
             ]
         },
@@ -247,7 +274,63 @@ var config = {
             onChapterEnter: [
                 {
 
-                } 
+                }
+            ],
+            onChapterExit: [
+                {
+
+                }
+            ]
+        },
+
+        {
+            id: 'terrain-id',
+            alignment: 'right',
+            hidden: false,
+            title: 'Terrain',
+            image: './images/terrain.jpg',
+            description: 'Extending across multiple municipalities such as Chelsea, Wakefield and Pontiac, Gatineau Park offers a variety of lookouts, picnic areas and various levels of elevation. The highest levels of elevation near Pontiac can reach up to 388m. <br> <a href="https://ncc-ccn.gc.ca/places/scenic-lookouts"target="_blank">Image source: Huron Lookout (NCC)</a>',
+            location: {
+                center: [-75.90550, 45.54921],
+                zoom: 11.09,
+                pitch: 46.50,
+                bearing: 0.02
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+
+                }
+            ],
+            onChapterExit: [
+                {
+
+                }
+            ]
+        },
+
+        {
+            id: 'credits-id',
+            alignment: 'left',
+            hidden: false,
+            title: 'Thank You from Team 4!',
+            image: './images/Gatineaupark.jpg',
+            description: '-Gillian, Yussuf, Didier, Edward and Alexandra. <br> <a href="https://ncc-ccn.gc.ca/places/conservation-at-gatineau-park"target="_blank">Image Source (NCC)</a>',
+            location: {
+                center: [-75.94234, 45.54483],
+                zoom: 11.09,
+                pitch: 46.00,
+                bearing: -2.65
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+
+                }
             ],
             onChapterExit: [
                 {
