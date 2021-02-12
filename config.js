@@ -65,7 +65,7 @@ var config = {
 
         {
             id: 'mackenzie-king-id',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             title: 'Mackenzie King Estate',
             image: './images/Mack.png',
@@ -96,7 +96,7 @@ var config = {
 
         {
             id: 'CampF-id',
-            alignment: 'left',
+            alignment: 'right',
             hidden: false,
             title: 'Camp Fortune',
             image: './images/Campfortune.jpg',
@@ -127,7 +127,7 @@ var config = {
 
         {
             id: 'sugarbush-id',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             title: 'Sugarbush Trail',
             image: './images/sugarbush.jpg',
