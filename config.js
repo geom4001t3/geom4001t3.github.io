@@ -147,7 +147,7 @@ var config = {
 
         {
             id: 'champlain-id',
-            alignment: 'left',
+            alignment: 'right',
             hidden: false,
             title: 'Champlain Lookout',
             image: './images/champlain.jpg',
@@ -178,7 +178,7 @@ var config = {
 
         {
             id: 'Luskville-id',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             title: 'Luskville Waterfalls',
             image: './images/waterfall.jpg',
@@ -198,7 +198,7 @@ var config = {
 
         {
             id: 'pinklake-id',
-            alignment: 'left',
+            alignment: 'right',
             hidden: false,
             title: 'Pink Lake',
             image: './images/pinklake.jpg',
@@ -229,7 +229,7 @@ var config = {
 
         {
             id: 'wakefield-id',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             title: 'Village of Wakefield',
             image: './images/wakefield.png',
@@ -257,7 +257,7 @@ var config = {
 
         {
             id: 'peche-lake-id',
-            alignment: 'left',
+            alignment: 'right',
             hidden: false,
             title: 'La Pêche Lake',
             image: './images/lacpeche.jpg',
@@ -285,7 +285,7 @@ var config = {
 
         {
             id: 'terrain-id',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             title: 'Terrain',
             image: './images/terrain.jpg',
@@ -313,7 +313,7 @@ var config = {
 
         {
             id: 'credits-id',
-            alignment: 'left',
+            alignment: 'right',
             hidden: false,
             title: 'Thank You from Team 4!',
             image: './images/Gatineaupark.jpg',
