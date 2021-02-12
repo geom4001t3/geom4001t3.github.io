@@ -78,7 +78,7 @@ var config = {
             callback: '',
             onChapterEnter: [
                 {
-
+                    
                 } 
             ],
             onChapterExit: [
@@ -105,17 +105,16 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 1,
-                //     duration: 5000
-                // }
+                {
+                    layer: 'Contour',
+                    opacity: 0,
+                }
             ],
             onChapterExit: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 0
-                // }
+                {
+                    layer: 'Contour',
+                    opacity: 0,
+                }
             ]
         },
 
@@ -136,17 +135,16 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 1,
-                //     duration: 5000
-                // }
+                {
+                    layer: 'Contour',
+                    opacity: 0,
+                }
             ],
             onChapterExit: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 0
-                // }
+                {
+                    layer: 'Contour',
+                    opacity: 0,
+                }
             ]
         },
 
@@ -166,8 +164,18 @@ var config = {
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
-            onChapterEnter: [],
-            onChapterExit: []
+            onChapterEnter: [
+                {
+                    layer: 'Contour',
+                    opacity: 0,
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'Contour',
+                    opacity: 0,
+                }
+            ]
         },
 
         {
@@ -187,17 +195,16 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 1,
-                //     duration: 5000
-                // }
+                {
+                layer: 'Contour',
+                opacity: 0,
+                }
             ],
             onChapterExit: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 0
-                // }
+                {                    
+                layer: 'Contour',
+                opacity: 0,
+            }
             ]
         },
 
@@ -217,8 +224,16 @@ var config = {
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
-            onChapterEnter: [],
-            onChapterExit: []
+            onChapterEnter: [
+                {
+                    layer: 'Contour',
+                    opacity: 0,
+                }
+            ],
+            onChapterExit: [{
+                layer: 'Contour',
+                opacity: 0,
+            }]
         },
 
         {
@@ -238,17 +253,16 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 1,
-                //     duration: 5000
-                // }
+                {
+                layer: 'Contour',
+                opacity: 0,
+                }
             ],
             onChapterExit: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 0
-                // }
+                {
+                layer: 'Contour',
+                opacity: 0,
+                }
             ]
         },
 
@@ -270,12 +284,14 @@ var config = {
             callback: '',
             onChapterEnter: [
                {
-
+                layer: 'Contour',
+                opacity: 0,
                }
             ],
             onChapterExit: [
                {
-
+                layer: 'Contour',
+                opacity: 0,
                }
             ]
         },
@@ -298,12 +314,14 @@ var config = {
             callback: '',
             onChapterEnter: [
                 {
-
+                    layer: 'Contour',
+                    opacity: 0,
                 }
             ],
             onChapterExit: [
                 {
-
+                    layer: 'Contour',
+                    opacity:1,
                 }
             ]
         },
@@ -352,7 +370,7 @@ var config = {
                 bearing: -2.65
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: false,
+            rotateAnimation: true,
             callback: '',
             onChapterEnter: [
                 {
