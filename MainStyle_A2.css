@@ -20,7 +20,7 @@
         color: black;
     }
     .hero-image{
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/walmart.png");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images_A2/walmart.png");
 
         height: 50%;
 
