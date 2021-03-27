@@ -86,7 +86,7 @@
 
              //map.removeLayer(markerGroup);
 
-             var response = "http://bustime.mta.info/api/where/stops-for-location.json?lat=" +  lat + "&lon=" + long + "&latSpan=0.005&lonSpan=0.005&key=886c2f34-5045-4fda-bd0a-881029c5ca30";
+             var response = "https://bustime.mta.info/api/where/stops-for-location.json?lat=" +  lat + "&lon=" + long + "&latSpan=0.005&lonSpan=0.005&key=886c2f34-5045-4fda-bd0a-881029c5ca30";
              console.log(response)
 
              var lat = [];
@@ -123,7 +123,7 @@
 
 
                    for (a = 0; a < code.length; a++) {
-                     var schedule_response = "http://bustime.mta.info/api/siri/stop-monitoring.json?key=886c2f34-5045-4fda-bd0a-881029c5ca30&OperatorRef=MTA&MonitoringRef=" + code[a];
+                     var schedule_response = "https://bustime.mta.info/api/siri/stop-monitoring.json?key=886c2f34-5045-4fda-bd0a-881029c5ca30&OperatorRef=MTA&MonitoringRef=" + code[a];
                      console.log(schedule_response)
 
                      $.ajax({
