@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Assignment 4</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/blog-post.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+  <style>
+
+  .tip{
+    position: absolute;
+    padding: 10px;
+    background: lightgray;
+    border: 1px solid black;
+    pointer-events: none; 
+  }
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+
+</style>
+</head>
+
+<body>
+ 
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">GEOM 4001 Environmental News</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4">Which Major Canadian City is the Greenest?</h1>
+
+        <!-- Author -->
+        <p class="lead">
+          by
+          <a> Team 3: Didier, Edward, Alexandra, Yussuf, Gillian</a>
+        </p>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p>Posted on April 16, 2021 at 12:00 AM</p>
+
+        <hr>
+
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="Image/EcoCity.jpg" alt="">
+
+        <hr>
+
+        <!-- Post Content -->
+        <p class="lead">Ever wondered how green your home city is compared to other cities in Canada? Look no further, the (fictious) Canadian Green Score City index measures the urban footprints from natures prospective.</p>
+        <p class="lead">It is based on The Green Score City Index, an ongoing empirical study of the anthropogenic impact cities have on the environment, however, it focuses on the following big cities: Ottawa, Montreal, Toronto, Vancouver, Calgary, and Winnipeg. </p>
+        <p class="lead">By using comparative indicators, the index portrays the socio-ecological strengths and weaknesses of each of these cities. Finally, by normalizing and aggregating the scores of these indicators, a final green score is produced for each city. </p>
+        <br>
+        <script>
+        var chart1 = d3.select("#area1")
+                  .append("svg")
+        </script>
+
+
+<blockquote class="blockquote">
+  <p class="mb-0"><b>The indicators:</b>
+  <ul>
+    <p>The Canadian Green Score city index focuses on indicators such as population, transportation, water, electricity usage, and waste production. The following 8 indicators were used in this index to calculate the final scores.</p>
+    <p><b> 1. Population impact: </b>Population count. Smaller populations have smaller footprints since they require less space for residential, commercial, industrial, recreational, and other human activities.<b>Lower is better.</b>  </p>
+    <p><b>2. Waste:</b>Total tonnage of garbage before the recycling redirect percentage (in ton).<b> Lower is better.</b> </p>
+    <p><b>3.Travel to work by: </b>Measures a population’s usage of public transit, cycling, and walking commuting habits in percentage.<b> Higher is better.</b> </p>
+    <p><b>4. Domestic water usage: </b>Water usage for the city’s population in Litres/cap/day. <b>Lower is better.</b></p>
+    <p><b>5. GHG Emissions: </b> Cities are now expected to report GHG emissions to provincial or federal government agencies. Measures each city's GHG emissions in megaton. <b>Lower is better.</b></p>
+    <p><b>6. Clean electrical capacity: </b>A calculated percentage of clean electrical capacity for each city. <b>Higher is better. </b></p>
+    <p><b>7. Recycling diversion rate: </b> Percentage of waste that is recycled and redirected away from landfills. <b>Higher is better.</b></p>
+    <p><b>8. Organic waste tonnage: </b>Total organic matter collected by a city from all sources (in ton). <b>Higher is better.</b></p>
+    <p><b>9. Park Count:</b> Total count of parks in a city. More parks leads to greater residential accessibility, proximity and higher usage. <b>Higher is better.</b></p>
+    <p><b>10. Municipal area: </b>Measured in square km. Larger municipal boundaries create larger city footprints. <b>Smaller is better.</b> </p><br><br>
+  
+    <h3 style="text-align: center;">Greening Indicator Scores by City </h3>
+    <div class="radarChart"></div>
+    
+    <script src="radar.js"> </script><br><br><br>
+
+    <br<br><button type="button" class="collapsible"> Data Table for Additional Greening Information by City </button>
+    <div class="content">
+        <table>
+            <tr>
+              <th>City</th>
+              <th>Population</th>
+              <th>Waste (tonnes)</th>
+              <th>Travel to work by bus, walk, bike (percentage)</th>
+              <th>Domestic water usage (L/cap/day)</th>
+              <th>GHG Emissions (Mtonnes)</th>
+              <th>Clean Electricity Capacity (%)</th>
+              <th>Recycling  Diversion Rate </th>
+              <th>Organic Waste (Tonnes)</th>
+              <th>Parks Count</th>
+            </tr>
+            <tr>
+              <td>Ottawa</td>
+              <td>934,243</td>
+              <td>328,853</td>
+              <td>33.50%</td>
+              <td>335</td>
+              <td>11.55</td>
+              <td>71.73%</td>
+              <td>43.90%</td>
+              <td>77016</td>
+              <td>978</td>
+            </tr>
+            <tr>
+              <td>Edmonton</td>
+              <td>932,546</td>
+              <td>311,470</td>
+              <td>59%</td>
+              <td>199</td>
+              <td>62.85</td>
+              <td>0.148</td>
+              <td>52%</td>
+              <td>52500</td>
+              <td>875</td>
+          </tr>
+            <tr>
+              <td>Vancouver</td>
+              <td>631486</td>
+              <td>351,106</td>
+              <td>50%</td>
+              <td>476</td>
+              <td>8.27</td>
+              <td>90%</td>
+              <td>65%</td>
+              <td>57465</td>
+              <td>240</td>
+
+            </tr>
+              <tr>
+                <td>Toronto</td>
+                <td>2,731,571</td>
+                <td>764,839</td>
+                <td>50%</td>
+                <td>431</td>
+                <td>33.76</td>
+                <td>71.73%</td>
+                <td>51.30%</td>
+                <td>213315</td>
+                <td>1500</td>
+              </tr>
+            <tr>
+              <td>Winnipeg</td>
+              <td>705,244</td>
+              <td>177845</td>
+              <td>55.%</td>
+              <td>314</td>
+              <td>11.47</td>
+              <td>91%</td>
+              <td>31.4%</td>
+              <td>33474</td>
+              <td>1336</td>
+            </tr>
+          </table>
+    </div>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }</script>
+
+  </ul>
+  </p>
+  <a href="Scoring.html"> For more information on How the Green Scores were Calculated and Individual Results </a>
+   
+ <br><br> Vancouver wins the crown for the greenest city with a total score of 69.9. Toronto comes in at second place with a score of 68.8 and lastly Winnipeg in third with a score of 68.0.
+ In the face of of an everchaning climate, these Canadian cities are all paving the way to a climate resilient future <br>
+
+          <br>
+          <div style= "text-align: center;">
+                  <br><br><h3 style=> Green City Ranking </h3>
+            <img class="img-fluid rounded" src="Image/GreenScore1.png" alt="">
+          </div>
+
+
+        <br><br><br><b>Note: The data utilized was obtained and calculated for Greenscore City Index. As explained in the results section, some of the scores does not accurately represent the data. Therefore, the (fictious) Canadian Green Score City index and the presented data should be taken with skepticism and not be repurposed for research or educational purposes. </b></ul>
+      
+      <p>For more information on where the data was obtained and how the scores were calculated and normalized, visit: <a href="https://greenscore.eco/index.html">GreenScore City Index Release Notes</a></a> <br><br>
+    
+				<br>
+</blockquote>
+
+       
+
+        
+        
+
+        <script>
+          var margin = {top: 100, right: 100, bottom: 100, left: 100},
+				width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
+				height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+
+			//////////////////////////////////////////////////////////////
+			////////////////////////// Data //////////////////////////////
+			//////////////////////////////////////////////////////////////
+
+			var data = [
+					  [//Ottawa
+						{axis:"Waste tonnage",value:0.9998},
+						{axis:"Travel to work",value:0.335},
+						{axis:"Domestic water usage",value:0.7997},
+						{axis:"GHG emissions",value:0.9192},
+						{axis:"Clean electrical capacity",value:0.7173},
+						{axis:"Recycling diversion rate",value:0.439},
+						{axis:"Organic waste tonnage",value:0.3546},
+						{axis:"Green space",value:0.6345}
+					  ],[//Vancouver
+            {axis:"Waste tonnage",value:0.9991},
+            {axis:"Travel to work",value:0.5},
+            {axis:"Domestic water usage",value:0.6444},
+            {axis:"GHG emissions",value:0.961},
+            {axis:"Clean electrical capacity",value:0.9044},
+            {axis:"Recycling diversion rate",value:0.65},
+            {axis:"Organic waste tonnage",value:0.262},
+            {axis:"Green space",value:0.1176}
+            ],[//Winnipeg
+            {axis:"Waste tonnage",value:0.9154},
+            {axis:"Travel to work",value:0.4294},
+            {axis:"Domestic water usage",value:0.555},
+            {axis:"GHG emissions",value:0.8524},
+            {axis:"Clean electrical capacity",value:0.9202},
+            {axis:"Recycling diversion rate",value:0.314},
+            {axis:"Organic waste tonnage",value:0.1484},
+            {axis:"Green space",value:0.8852}
+            ], [//Toronto
+            {axis:"Waste tonnage",value:1},
+            {axis:"Travel to work",value:0.5},
+            {axis:"Domestic water usage",value:0.7022},
+            {axis:"GHG emissions",value:0.6355},
+            {axis:"Clean electrical capacity",value:0.7173},
+            {axis:"Recycling diversion rate",value:0.513},
+            {axis:"Organic waste tonnage",value:1},
+            {axis:"Green space",value:1}
+          ], [//Edmonton
+            {axis:"Waste tonnage",value:0},
+            {axis:"Travel to work",value:0.595},
+            {axis:"Domestic water usage",value:1},
+            {axis:"GHG emissions",value:0.264},
+            {axis:"Clean electrical capacity",value:0.148},
+            {axis:"Recycling diversion rate",value:0.52},
+            {axis:"Organic waste tonnage",value:0.2385},
+            {axis:"Green space",value:0.5623}
+          ]
+  ];
+			//////////////////////////////////////////////////////////////
+			//////////////////// Draw the Chart //////////////////////////
+			//////////////////////////////////////////////////////////////
+
+			var color = d3.scale.ordinal()
+				.range(["#CC333F", "#00A0B0", "#36d424", "#EDC951", "#58167B"]);
+
+			var radarChartOptions = {
+			  w: width,
+			  h: height,
+			  margin: margin,
+			  maxValue: 1,
+			  levels: 10,
+			  roundStrokes: false,
+			  color: color
+			};
+			//Call function to draw the Radar chart
+			RadarChart(".radarChart", data, radarChartOptions);
+        </script>
+       
+
+        
+      
+        
+
+        <script>var chart2 = d3.select("#area2")
+        .append("svg")
+      </script>
+
+        <!-- Comments Form -->
+        <div class="card my-4">
+          <h5 class="card-header">Leave a Comment:</h5>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Single Comment -->
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="Image/Dipto2.png" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Dipto</h5>
+            Wow amazing! I expected nothing less from my favourite group! I wonder who taught you to make these amazing SVGs.
+          </div>
+        </div>
+
+        <!-- Comment with nested comments -->
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="Image/Gillian.png" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Gillian </h5>
+            <p> Now that the LRT is up and running hopefully more people will green commute in Ottawa :) </p>
+
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="Image/Yussuf.png" alt="">
+              <div class="media-body">
+                <h5 class="mt-0"> Yussuf </h5>
+                God I hate the LRT
+
+              </div>
+            </div>
+
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="Image/Didier.png" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Didier</h5>
+                
+                Hopefully the LRT expansion will open at Carleton soon
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sidebar Widgets Column -->
+      <div class="col-md-4">
+
+        <!-- Search Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">Search</h5>
+          <div class="card-body">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-append">
+                <button class="btn btn-secondary" type="button">Go!</button>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Categories Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">Categories</h5>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-6">
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="#">Web Design</a>
+                  </li>
+                  <li>
+                    <a href="#">HTML</a>
+                  </li>
+                  <li>
+                    <a href="#">Freebies</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="#">JavaScript</a>
+                  </li>
+                  <li>
+                    <a href="#">CSS</a>
+                  </li>
+                  <li>
+                    <a href="#">Tutorials</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Side Widget -->
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br>
+       
+        <div class="card my-4">
+          <h5 class="card-header"></h5>
+          <img class="d-flex mr-3 rounded-circle" src="Image/Legend.jpg" alt="">
+          <div class="card-body">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+ 
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

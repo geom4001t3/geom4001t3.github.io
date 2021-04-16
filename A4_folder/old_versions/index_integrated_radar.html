@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <title>Both Charts</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/blog-post.css" rel="stylesheet">
+
+</head>
+<style>
+    .rectangle:hover{
+        opacity: 0.50;
+    }
+    div.tooltip {
+        position: absolute;
+        text-align: center;
+        width: 200px;
+        height: 70px;
+        padding: 4px;
+        font: 12px sans-serif bold;
+        background: transparent;
+        border: 0px;
+        border-radius: 12px;
+        pointer-events: none;
+     }
+</style>
+
+<body>
+ 
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">GEOM 4001 Environmental News</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4">Which Major Canadian City is the Greenest?</h1>
+
+        <!-- Author -->
+        <p class="lead">
+          by
+          <a> Team 3: Didier, Edward, Alexandra, Yussuf, Gillian</a>
+        </p>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p>Posted on April 16, 2021 at 12:00 AM</p>
+
+        <hr>
+
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="Image/EcoCity.jpg" alt="">
+
+        <hr>
+
+        <!-- Post Content -->
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
+        <br>
+
+
+        <div style= "text-align: center;">
+            <h3> Green Commuters via Bike, Walking and Bus </h3>
+          <div id= "d3-container">
+        </div>
+        <script src="index.js"></script>
+
+
+
+
+        <div style="text-align: left;"></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
+
+
+        <blockquote class="blockquote">
+          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <footer class="blockquote-footer">Someone famous in
+            <cite title="Source Title">Source Title</cite>
+          </footer>
+        </blockquote>
+
+        
+        <div style="text-align: center;">
+            <h3> Radar Chart</h3>
+           <div id="radarChart">
+        </div>
+        <div class="radarChart"></div>
+		<script src="radarChart.js"></script>
+
+
+        <script>
+      
+                  var margin = {top: 100, right: 100, bottom: 100, left: 100},
+                      width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
+                      height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+                          
+                  ////////////////////////////////////////////////////////////// 
+                  ////////////////////////// Data ////////////////////////////// 
+                  ////////////////////////////////////////////////////////////// 
+      
+                  var data = [
+                            [//iPhone
+                              {axis:"Battery Life",value:0.22},
+                              {axis:"Brand",value:0.28},
+                              {axis:"Contract Cost",value:0.29},
+                              {axis:"Design And Quality",value:0.17},
+                              {axis:"Have Internet Connectivity",value:0.22},
+                              {axis:"Large Screen",value:0.02},
+                              {axis:"Price Of Device",value:0.21},
+                              {axis:"To Be A Smartphone",value:0.50}			
+                            ],[//Samsung
+                              {axis:"Battery Life",value:0.27},
+                              {axis:"Brand",value:0.16},
+                              {axis:"Contract Cost",value:0.35},
+                              {axis:"Design And Quality",value:0.13},
+                              {axis:"Have Internet Connectivity",value:0.20},
+                              {axis:"Large Screen",value:0.13},
+                              {axis:"Price Of Device",value:0.35},
+                              {axis:"To Be A Smartphone",value:0.38}
+                            ],[//Nokia Smartphone
+                              {axis:"Battery Life",value:0.26},
+                              {axis:"Brand",value:0.10},
+                              {axis:"Contract Cost",value:0.30},
+                              {axis:"Design And Quality",value:0.14},
+                              {axis:"Have Internet Connectivity",value:0.22},
+                              {axis:"Large Screen",value:0.04},
+                              {axis:"Price Of Device",value:0.41},
+                              {axis:"To Be A Smartphone",value:0.30}
+                            ]
+                          ];
+                  ////////////////////////////////////////////////////////////// 
+                  //////////////////// Draw the Chart ////////////////////////// 
+                  ////////////////////////////////////////////////////////////// 
+      
+                  var color = d3.scale.ordinal()
+                      .range(["#EDC951","#CC333F","#00A0B0"]);
+                      
+                  var radarChartOptions = {
+                    w: width,
+                    h: height,
+                    margin: margin,
+                    maxValue: 0.5,
+                    levels: 5,
+                    roundStrokes: true,
+                    color: color
+                  };
+                  //Call function to draw the Radar chart
+                  RadarChart(".radarChart", data, radarChartOptions);
+                  </script>
+
+
+        <div style="text-align: left;"></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
+
+        <hr>
+
+
+        <!-- Comments Form -->
+        <div class="card my-4">
+          <h5 class="card-header">Leave a Comment:</h5>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Single Comment -->
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Commenter Name</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          </div>
+        </div>
+
+        <!-- Comment with nested comments -->
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Commenter Name</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Commenter Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Commenter Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sidebar Widgets Column -->
+      <div class="col-md-4">
+
+
+
+        <!-- Side Widget -->
+        
+
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+ 
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

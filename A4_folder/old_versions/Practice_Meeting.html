@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- D3.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+
+
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+
+    <script src="radar.js"></script>
+    <script>
+        var margin = {top: 100, right: 100, bottom: 100, left: 100},
+				width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
+				height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+
+			//////////////////////////////////////////////////////////////
+			////////////////////////// Data //////////////////////////////
+			//////////////////////////////////////////////////////////////
+
+			var data = [
+					  [//Ottawa
+						{axis:"Waste tonnage",value:0.9998},
+						{axis:"Travel to work",value:0.335},
+						{axis:"Domestic water usage",value:0.7997},
+						{axis:"GHG emissions",value:0.9192},
+						{axis:"Clean electrical capacity",value:0.7173},
+						{axis:"Recycling diversion rate",value:0.439},
+						{axis:"Organic waste tonnage",value:0.3546},
+						{axis:"Green space",value:0.6345}
+					  ],[//Vancouver
+            {axis:"Waste tonnage",value:0.9991},
+            {axis:"Travel to work",value:0.5},
+            {axis:"Domestic water usage",value:0.6444},
+            {axis:"GHG emissions",value:0.961},
+            {axis:"Clean electrical capacity",value:0.9044},
+            {axis:"Recycling diversion rate",value:0.65},
+            {axis:"Organic waste tonnage",value:0.262},
+            {axis:"Green space",value:0.1176}
+            ],[//Winnipeg
+            {axis:"Waste tonnage",value:0.9154},
+            {axis:"Travel to work",value:0.4294},
+            {axis:"Domestic water usage",value:0.555},
+            {axis:"GHG emissions",value:0.8524},
+            {axis:"Clean electrical capacity",value:0.9202},
+            {axis:"Recycling diversion rate",value:0.314},
+            {axis:"Organic waste tonnage",value:0.1484},
+            {axis:"Green space",value:0.8852}
+            ], [//Toronto
+            {axis:"Waste tonnage",value:1},
+            {axis:"Travel to work",value:0.5},
+            {axis:"Domestic water usage",value:0.7022},
+            {axis:"GHG emissions",value:0.6355},
+            {axis:"Clean electrical capacity",value:0.7173},
+            {axis:"Recycling diversion rate",value:0.513},
+            {axis:"Organic waste tonnage",value:1},
+            {axis:"Green space",value:1}
+          ], [//Edmonton
+            {axis:"Waste tonnage",value:0},
+            {axis:"Travel to work",value:0.595},
+            {axis:"Domestic water usage",value:1},
+            {axis:"GHG emissions",value:0.264},
+            {axis:"Clean electrical capacity",value:0.148},
+            {axis:"Recycling diversion rate",value:0.52},
+            {axis:"Organic waste tonnage",value:0.2385},
+            {axis:"Green space",value:0.5623}
+          ]
+  ];
+			//////////////////////////////////////////////////////////////
+			//////////////////// Draw the Chart //////////////////////////
+			//////////////////////////////////////////////////////////////
+
+			var color = d3.scale.ordinal()
+				.range(["#CC333F", "#00A0B0", "#36d424", "#EDC951", "#58167B"]);
+
+			var radarChartOptions = {
+			  w: width,
+			  h: height,
+			  margin: margin,
+			  maxValue: 1,
+			  levels: 10,
+			  roundStrokes: false,
+			  color: color
+			};
+			//Call function to draw the Radar chart
+			RadarChart("#div1", data, radarChartOptions);
+    </script>
+
+    <script> 
+
+    var margin1 = {top: 20, right: 0, bottom: 21, left: 30},
+        height1 = 300,
+        width1 = 400,
+        w = width1 - margin1.left - margin1.right,
+        h = height1 - margin1.top - margin1.bottom;
+var parseDate = d3.time.format("%Y-%m-%d").parse;
+
+var greenCommute = [
+    {city: "Ottawa", percentage: 30, pop: "934,243", commuteTime: 27},
+    {city: "Vancouver", percentage: 50, pop: "631,486", commuteTime: 30},
+    {city: "Montreal", percentage: 50, pop: "1,704,694", commuteTime: 30},
+    {city: "Toronto", percentage: 50, pop: "2,731,571", commuteTime: 34},
+    {city: "Calgary", percentage: 17, pop: "1,239,220", commuteTime: 27},
+    {city: "Winnipeg", percentage: 55, pop: "705,244", commuteTime: 24}
+];
+
+var svg = d3.select('#div2')
+              .append('svg')
+              .attr("width", '100%')
+              .attr("height", '100%')
+              .attr("viewBox", "0 0 " + width1 + " " + height1)
+              .attr("preserveAspectRatio", "xMinYMin meet")
+              .append("g")
+                .attr("transform", 
+                      "translate(" + margin1.left + "," + margin1.top + ")");
+
+var x = d3.scale.ordinal().rangeRoundBands([0, w], .2, .02);
+
+var xAxis = d3.svg.axis()
+            .scale(x)
+            .orient("bottom")
+            .tickSize(0)
+            .tickPadding(5);
+x.domain(d3.range(greenCommute.length));
+
+svg.append("g")
+ .attr("class", "axis easting")
+ .attr("transform", "translate(0," + h + ")")
+ .call(xAxis)
+ .selectAll("text")
+  .style("text-anchor", "middle");
+  
+var y = d3.scale.linear().range([h, 0]);
+var yAxis = d3.svg.axis()
+          .scale(y)
+          .orient("left")
+          .ticks(6);
+y.domain([0,100]);
+
+svg.append("g")
+  .attr("class", "axis northing")
+  .call(yAxis)
+  .selectAll("line")
+  .attr("x2", w)
+  
+svg.selectAll('rect')
+  .data(greenCommute)
+  .enter()
+  .append('rect')
+  .attr('width', function(d,i){
+      return x.rangeBand();
+  })
+  .attr('height', function(d,i){
+      return d.percentage;
+  })
+  .attr('x', function(d,i){
+      return x(d.city);
+  })
+  .attr('y', function(d,i){
+      return y(0);
+  })
+  .attr('fill', 'blue')
+  ;
+
+</script>
+
+    
+</body>
+</html>
+
